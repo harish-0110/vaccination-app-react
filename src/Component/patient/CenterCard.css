@@ -1,0 +1,22 @@
+.center-card {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    transition: transform 0.3s;
+}
+
+.center-card:hover {
+    transform: scale(1.05);
+}
+
+.center-card .card-body {
+    display: flex;
+}
+
+.center-card .card-body > div {
+    flex: 1;
+}
+
+.center-card .btn {
+    margin-left: 10px;
+}
