@@ -1,0 +1,8 @@
+.nav-link {
+    text-decoration: none; /* Remove underline from links */
+}
+
+.dropdown-menu {
+    right: 0; /* Align dropdown menu to the right */
+}
+

@@ -1,0 +1,14 @@
+.card-container {
+    width: 50%;
+    margin: auto;
+}
+
+.card-title {
+    text-align: center;
+}
+.page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Set the height of the container to the full viewport height */
+}
