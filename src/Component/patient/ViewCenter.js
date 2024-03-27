@@ -11,7 +11,7 @@ const ViewCenter = () => {
     const [activeTab, setActiveTab] = useState('pincode');
     const [searchValue, setSearchValue] = useState(''); 
     const location = useLocation();
-
+    
     useEffect(() => {
         axios.get('http://localhost:8090/center/getAllCenter').then((res) => {
             console.log(res);
@@ -71,7 +71,6 @@ const ViewCenter = () => {
                             <td>{center.district}</td>
                             <td>{center.state}</td>
                             <td>{center.contactNumber}</td>
-                            <td></td>
                         </tr>
                     ))}
                 </tbody>
