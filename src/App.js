@@ -15,6 +15,10 @@ import SuperAdminProfile from './Component/superAdmin/SuperAdminProfile';
 import AddAdmin from './Component/superAdmin/AddAdmin';
 import { ToastContainer } from 'react-toastify';
 import UpdateAdmin from './Component/superAdmin/UpdateAdmin';
+import AddCenter from './Component/superAdmin/AddCenter';
+import AddVaccine from './Component/superAdmin/AddVaccine';
+import UpdateCenter from './Component/superAdmin/updateCenter';
+import UpdateVaccine from './Component/superAdmin/updateVaccine';
 
 function App() {
   return (
@@ -36,6 +40,13 @@ function App() {
           <Route path='updateAdmin/:adminId' element={<UpdateAdmin/>}/>
           <Route path='addAdmin' element={<AddAdmin/>}/>
           <Route path='profile' element={<SuperAdminProfile/>}/>
+          <Route path='addCenter' element={<AddCenter/>}/>
+          <Route path='addVaccine' element={<AddVaccine/>}/>
+          <Route path='updateCenter/:centerId' element={<UpdateCenter/>}/>
+          <Route path='updateVaccine/:vaccineId' element={<UpdateVaccine/>}/>
+
+
+          
         </Route>
       </Routes>
     </Router>
