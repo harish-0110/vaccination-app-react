@@ -19,6 +19,16 @@ import AddCenter from './Component/superAdmin/AddCenter';
 import AddVaccine from './Component/superAdmin/AddVaccine';
 import UpdateCenter from './Component/superAdmin/updateCenter';
 import UpdateVaccine from './Component/superAdmin/updateVaccine';
+import AdminLayout from './Component/admin/AdminLayout';
+import CreateSlot from './Component/admin/CreateSlot';
+import ManageAppointments from './Component/admin/ManageAppoitments';
+import ManageCenter from './Component/admin/ManageCenter';
+import ManageVaccines from './Component/admin/ManageVaccine';
+import AdminHome from './Component/admin/AdminHome';
+import AdminLogin from './Component/admin/AdminLogin';
+import ViewVaccine from './Component/admin/ViewVaccine';
+import EditSlot from './Component/admin/EditSlot';
+import AddSlot from './Component/admin/AddSlot';
 
 function App() {
   return (
@@ -47,6 +57,18 @@ function App() {
 
 
           
+        </Route>
+        <Route path='/admin/login' element={<AdminLogin/>}/>
+        <Route path='/admin/:email/*' element={<AdminLayout/>}>
+          <Route index element={<ManageCenter/>}/>
+          <Route path='manageVaccines' element={<ManageVaccines/>}/>
+          <Route path='manageSlots' element={<CreateSlot/>}/>
+          <Route path='manageAppointments' element={<ManageAppointments/>}/>
+          <Route path='addSlot' element={<CreateSlot/>}/>
+          <Route path='profile' element={<AdminHome/>}/>
+          <Route path='viewVaccine' element={<ViewVaccine/>}/>
+          <Route path='editSlot/:id' element={<EditSlot/>}/>
+          <Route path='newSlot' element={<AddSlot/>}/>
         </Route>
       </Routes>
     </Router>

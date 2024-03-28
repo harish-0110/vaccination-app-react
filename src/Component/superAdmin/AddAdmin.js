@@ -77,7 +77,7 @@ const AddAdmin = () => {
                                 </Col>
                             </FormGroup>
                             <FormGroup row>
-                                <Label for="email" sm={4}>Admin Email</Label>
+                                <Label for="email" sm={4}>Admin Password</Label>
                                 <Col sm={8}>
                                     <Input type="password" name="password" id="password" placeholder="Enter Admin Password" value={newAdmin.password} onChange={onHandleChange} />
                                 </Col>

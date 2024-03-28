@@ -32,7 +32,7 @@ const PatientLayout = () => {
                             <DropdownMenu end>
                                 <DropdownItem tag={Link} to={`/patient/${patientEmail}/profile`}>View Profile</DropdownItem>
                                 <DropdownItem divider />
-                                <DropdownItem>Logout</DropdownItem>
+                                <DropdownItem tag={Link} to={`/patient/login`}>Logout</DropdownItem>
                             </DropdownMenu>
                         </UncontrolledDropdown>
                     </NavbarText>

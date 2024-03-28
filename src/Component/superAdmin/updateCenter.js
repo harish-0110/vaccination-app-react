@@ -1,5 +1,5 @@
 import axios from "axios";
-import {  useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card, CardBody, Form, FormGroup, Label, Input, Col, Button } from 'reactstrap';
@@ -16,8 +16,12 @@ const UpdateCenter = () => {
         state: '',
         contactNumber: '',
         vaccineMap: [],
-        admin: {}
+        admin: {
+            adminId: 0
+        }
     });
+
+    const [admins, setAdmins] = useState([]);
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -29,11 +33,25 @@ const UpdateCenter = () => {
                 const response = await axios
                     .get(`http://localhost:8090/center/getByID/${centerId}`);
                 console.log(response.data);
-                setNewCenter(response.data);
+                const data = response.data;
+                setNewCenter(data);
+
             } catch (err) {
                 console.log(err);
             }
         }
+        const getAllAdmin = async () => {
+            try {
+                const response = await axios.
+                    get('http://localhost:8090/vaccinationapp/admin/getalladmin');
+                console.log(response.data);
+                setAdmins(response.data)
+            } catch (err) {
+                console.log(err);
+            }
+
+        }
+        getAllAdmin();
         getCenterById();
     }, [])
 
@@ -43,6 +61,18 @@ const UpdateCenter = () => {
             [e.target.name]: e.target.value
         })
     }
+
+    const handleAddAdmin = (e) => {
+        const item = admins.find(admin => {
+            return admin.adminId == e.target.value
+        });
+        console.log(item);
+        setNewCenter({
+            ...newCenter,
+            admin: item
+        })
+    };
+
 
     const onSubmit = async (e) => {
         e.preventDefault()
@@ -109,6 +139,17 @@ const UpdateCenter = () => {
                                     <Input type="text" name="contactNo" id="contactNo" placeholder="Enter phno" value={newCenter.contactNumber} onChange={onHandleChange} />
                                 </Col>
                             </FormGroup>
+                            <FormGroup>
+                                <Label for="contactNo" sm={4}>Admin</Label>
+
+                                <Col sm={8}>
+                                    <Input name="admin" id="admin" type="select" onChange={handleAddAdmin} value={newCenter.admin ? newCenter.admin.adminId : newCenter.admin}>
+                                        {admins && admins.map((admin, index) => (
+                                            <option key={index} value={admin.adminId}>{admin.adminName}</option>
+                                        ))}
+                                    </Input>
+                                </Col>
+                            </FormGroup>
                             <div className="text-center">
                                 {/* Add the Update button */}
                                 <Button color="primary" type="submit" >Update</Button>
@@ -124,4 +165,3 @@ const UpdateCenter = () => {
 
 export default UpdateCenter;
 
-    

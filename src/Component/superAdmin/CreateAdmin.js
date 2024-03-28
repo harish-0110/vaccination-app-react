@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Card, CardBody, CardTitle, CardText, Button } from 'reactstrap';
+import { Card, CardBody, CardText, Button } from 'reactstrap';
 import './CreateAdmin.css';
 import { useLocation, useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
+
 const CreateAdmin = () => {
     const [admins, setAdmins] = useState([]);
     const navigate = useNavigate();
@@ -60,7 +61,7 @@ const CreateAdmin = () => {
     }
     return (<>
         <div>
-        <Button color="primary" onClick={handleAddAdmin}>+ Add Admin</Button>
+        <Button style={{marginTop: '1%', marginLeft: '3%'}} color="primary" onClick={handleAddAdmin}>+ Add Admin</Button>
             {admins.map(admin => (
                 <Card key={admin.adminId} className="admin-card hoverable-card" style={{ marginTop: '2%', marginLeft: '2%', marginRight: '2%' }}>
                     <CardBody>

@@ -3,8 +3,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Navbar, NavbarBrand, Nav, NavItem, NavLink, Container } from 'reactstrap';
 import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, NavbarText } from 'reactstrap';
 
-const SuperAdminLayout = () => {
-    const superAdmin = JSON.parse(sessionStorage.getItem('SuperAdmin'));
+const AdminLayout = () => {
+    const admin = JSON.parse(sessionStorage.getItem('Admin'));
 
 
     return (
@@ -15,13 +15,16 @@ const SuperAdminLayout = () => {
                         <NavbarBrand className="mr-auto">Vaccination App</NavbarBrand>
 
                         <NavItem>
-                            <NavLink className="nav-link" tag={Link} to={`/superAdmin/${superAdmin.email}`}>Create Center</NavLink>
+                            <NavLink className="nav-link" tag={Link} to={`/admin/${admin.email}`}>Manage Center</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink className="nav-link" tag={Link} to={`/superAdmin/${superAdmin.email}/createVaccine`}>Create Vaccine</NavLink>
+                            <NavLink className="nav-link" tag={Link} to={`/admin/${admin.email}/manageVaccines`}>Manage Vaccine</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink className="nav-link" tag={Link} to={`/superAdmin/${superAdmin.email}/createAdmin`}>Create Admin</NavLink>
+                            <NavLink className="nav-link" tag={Link} to={`/admin/${admin.email}/manageAppointments`}>Manage Appointments</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink className="nav-link" tag={Link} to={`/admin/${admin.email}/manageSlots`}>Create Slot</NavLink>
                         </NavItem>
 
                     </Nav>
@@ -31,9 +34,9 @@ const SuperAdminLayout = () => {
                                 Profile
                             </DropdownToggle>
                             <DropdownMenu end>
-                                <DropdownItem tag={Link} to={`/superAdmin/${superAdmin.email}/profile`}>View Profile</DropdownItem>
+                                <DropdownItem tag={Link} to={`/admin/${admin.email}/profile`}>View Profile</DropdownItem>
                                 <DropdownItem divider />
-                                <DropdownItem tag={Link} to={`/superAdmin/login`}>Logout</DropdownItem>
+                                <DropdownItem tag={Link} to={`/admin/login`}>Logout</DropdownItem>
                             </DropdownMenu>
                         </UncontrolledDropdown>
                     </NavbarText>
@@ -46,4 +49,4 @@ const SuperAdminLayout = () => {
     );
 }
 
-export default SuperAdminLayout;
+export default AdminLayout;

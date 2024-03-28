@@ -1,0 +1,14 @@
+.hoverable-item:hover {
+    background-color: #f5f5f5;
+    /* Change the background color on hover */
+    cursor: pointer;
+    /* Change the cursor on hover */
+}
+
+.hoverable-card {
+    transition: transform 0.2s;
+}
+
+.hoverable-card:hover {
+    transform: scale(1.02);
+}
