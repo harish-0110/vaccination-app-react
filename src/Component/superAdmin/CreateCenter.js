@@ -63,7 +63,7 @@ const CreateCenter = () => {
 
     return (<>
         <div>
-        <Button color="primary" onClick={handleAddCenter}>+ Add Center</Button> 
+        <Button style={{marginLeft: '10%', marginTop:'1%'}} color="primary" onClick={handleAddCenter}>+ Add Center</Button> 
             {centers.map(center => (
                 <Card key={center.centerId} className="admin-card hoverable-card"  style={{marginTop: '2%', marginLeft:'2%',  marginRight:'2%' }}>
                     <CardBody>
