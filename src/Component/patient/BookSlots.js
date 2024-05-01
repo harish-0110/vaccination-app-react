@@ -69,7 +69,7 @@ const BookSlots = () => {
                 ...appointment,
                 slot: curSlot
             })
-
+            console.log(curSlot);
         }
     };
 
@@ -133,8 +133,8 @@ const BookSlots = () => {
                 <Card style={{ width: '70%' }}>
                     <CardBody>
                         <CardText>
-                            Center Name: {center.centerName}
-                            Address:{center.address}, {center.state}, {center.district}
+                            Center Name: {center.centerName}<br></br>
+                            Address : {center.address}, {center.state}, {center.district}<br></br>
                             Contact Number: {center.contactNumber}
                         </CardText>
                         <div>

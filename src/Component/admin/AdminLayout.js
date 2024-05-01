@@ -13,7 +13,9 @@ const AdminLayout = () => {
                 <Container className="d-flex justify-content-between">
                     <Nav className="ml-auto" navbar>
                         <NavbarBrand className="mr-auto">Vaccination App</NavbarBrand>
-
+                        <NavItem>
+                            <NavLink className="nav-link" tag={Link} to={`/admin/${admin.email}/manageSlots`}>Create Slot</NavLink>
+                        </NavItem>
                         <NavItem>
                             <NavLink className="nav-link" tag={Link} to={`/admin/${admin.email}`}>Manage Center</NavLink>
                         </NavItem>
@@ -21,10 +23,16 @@ const AdminLayout = () => {
                             <NavLink className="nav-link" tag={Link} to={`/admin/${admin.email}/manageVaccines`}>Manage Vaccine</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink className="nav-link" tag={Link} to={`/admin/${admin.email}/manageAppointments`}>Manage Appointments</NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink className="nav-link" tag={Link} to={`/admin/${admin.email}/manageSlots`}>Create Slot</NavLink>
+                        <UncontrolledDropdown inNavbar>
+                            <DropdownToggle nav caret>
+                                Manage patients
+                            </DropdownToggle>
+                            <DropdownMenu end>
+                                <DropdownItem tag={Link} to={`/admin/${admin.email}/manageAppointments`}>Manage appointments</DropdownItem>
+                                <DropdownItem divider />
+                                <DropdownItem tag={Link} to={`/admin/${admin.email}/sideEffects`}>Side effect complaints</DropdownItem>
+                            </DropdownMenu>
+                        </UncontrolledDropdown>
                         </NavItem>
 
                     </Nav>

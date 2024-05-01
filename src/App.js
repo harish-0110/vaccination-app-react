@@ -29,6 +29,7 @@ import AdminLogin from './Component/admin/AdminLogin';
 import ViewVaccine from './Component/admin/ViewVaccine';
 import EditSlot from './Component/admin/EditSlot';
 import AddSlot from './Component/admin/AddSlot';
+import SideEffect from './Component/admin/SideEffects';
 
 function App() {
   return (
@@ -64,6 +65,7 @@ function App() {
           <Route path='manageVaccines' element={<ManageVaccines/>}/>
           <Route path='manageSlots' element={<CreateSlot/>}/>
           <Route path='manageAppointments' element={<ManageAppointments/>}/>
+          <Route path='sideEffects' element={<SideEffect/>}/>
           <Route path='addSlot' element={<CreateSlot/>}/>
           <Route path='profile' element={<AdminHome/>}/>
           <Route path='viewVaccine' element={<ViewVaccine/>}/>
